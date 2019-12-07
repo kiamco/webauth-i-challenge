@@ -1,11 +1,11 @@
 exports.up = function(knex) {
     return knex.schema.createTable('users', user => {
-        user.increments();
-        user.string('email').notNullable();
-        user.string('password').notNullable;
+        user.increments('id').primary();
+        user.string('email').unique();
+        user.string('password');
     })
 };
 
 exports.down = function(knex) {
-    return knew.schema.dropTableIfExists('users');
+    return knex.schema.dropTableIfExists('users');
 };

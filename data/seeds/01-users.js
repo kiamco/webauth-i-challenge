@@ -3,8 +3,8 @@ exports.seed = function(knex) {
     return knex('users').del()
         .then(function() {
             // Inserts seed entries
-            return knex('table_name').insert([
-                { users: 'admin' },
+            return knex('users').insert([
+                { email: 'admin' },
                 { password: 'password' }
             ]);
         });
